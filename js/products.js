@@ -1,4 +1,3 @@
-
 const baseURL = "https://api.noroff.dev/api/v1/rainy-days/"
 
 const productGrid = document.querySelector('.product-grid');
