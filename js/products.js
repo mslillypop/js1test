@@ -1,13 +1,13 @@
 
 const baseURL = "https://api.noroff.dev/api/v1/rainy-days/"
 
-
+const productGrid = document.querySelector('.product-grid');
+const productId = new URLSearchParams(window.location.search).get('id');
 
 
 export async function fetchProduct() {
 
-  const productGrid = document.querySelector('.product-grid');
-  const productId = new URLSearchParams(window.location.search).get('id');
+ 
 
    fetch(baseURL)
   .then(response => response.json())
@@ -37,7 +37,11 @@ export async function fetchProduct() {
   })
   .catch(error => console.log(error));
   
-  productGrid.addEventListener('click', event => {
+  
+  
+}
+
+productGrid.addEventListener('click', event => {
   const productClicked = event.target.closest('.product-item');
   if (productClicked) {
 
@@ -45,6 +49,3 @@ export async function fetchProduct() {
     }
 
 });
-  
-}
-
